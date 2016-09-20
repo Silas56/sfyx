@@ -72,6 +72,15 @@
 	#arrow{border:17px solid #679a01;border-right-color: transparent;border-top-color: transparent;border-bottom-color: transparent; position: absolute; left:632px;top:34px;}
 	#arrowsuper{border:18px solid #fff;border-right-color: transparent;border-top-color: transparent;border-bottom-color: transparent; position: absolute; left:920px;top:34px;}
 	#arrowsuper_inner{border:14px solid #e5e5e5;border-right-color: transparent;border-top-color: transparent;border-bottom-color: transparent; position: absolute; left:920px;top:38px;}
+	/*内容区*/
+#gouwuche{height: 40px;width: 1200px;background: grey;line-height: 40px;overflow: hidden;}
+#gouwuche p{float: right;}
+#gouwuche p .bigs{font-size: 20px;font-weight: bolder;display:inline-block;margin-right: 16px;}
+#gouwuche p .font_16{font-size: 16px;}
+#gouwuche p #addres{display: inline-block;width: 74px;height: 12px;border:1px solid #dcdcdc;padding: 6px;margin-right: 16px;line-height: 12px}
+
+#gouwuche .formr{float: left;}
+
 
 	/*底部*/
 	#bottomAd ul{width: 1200px;height: 120px}
@@ -312,11 +321,13 @@
 
 	<!-- gouwuche -->
 
-	<p><p><span class="bigs">我的购物车</span><span>送至:</span><span id="addres">北京东城区</span><span>提示:请选择你的收货区域，查看更准确的信息</span></p><p><span>总计(不含运费):</span><span id="money">￥99</span></p></p>
+	<div id="gouwuche"><p class="formr"><span class="bigs">我的购物车</span><span class="font_16">送至:</span><span id="addres">北京东城区</span><span >提示:请选择你的收货区域，查看更准确的信息</span></p>
+	<p><span>总计 ( 不含运费 ) : </span><span id="money">￥99</span></p>
+	</div>
 	<table>
-		<tr>
-			<td><input type="checkbox" name="check">全选</td>
-			<td>商品</td>
+		<tr class="firstline">
+			<td class="firsttd"><input type="checkbox" name="check">全选</td>
+			<td char="secondtd">商品</td>
 			<td>单价</td>
 			<td>优惠</td>
 			<td>数量</td>
@@ -325,7 +336,7 @@
 			<td>库存状况</td>
 			<td>操作</td>
 		</tr>
-		<tr>
+		<tr class="secondline">
 			<td><input type="checkbox" name="check"></td>
 			<td><img src="">果郡王 泰国进口山竹5斤装 新鲜热带进口水果(偏远地方不发货)2500g</td>
 			<td> ￥99</td>
@@ -337,7 +348,8 @@
 			<td><span id="collect">收藏</span><span id="delect">删除</span></td>
 		</tr>
 	</table>
-
+	<p><span>删除选中的商品</span><span>清空购物车</span><span class="end">重量总计:<span id="num">2.5kg</span>(含包装)(不含运费) &nbsp;商品总计 : <span id="last">￥99</span></span></p>
+    <button>继续购物</button><button>去结算</button>
 	
 		<!-- 底部 -->
 		<div id="bottom">
