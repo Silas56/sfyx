@@ -73,7 +73,7 @@
 	#arrowsuper{border:18px solid #fff;border-right-color: transparent;border-top-color: transparent;border-bottom-color: transparent; position: absolute; left:920px;top:34px;}
 	#arrowsuper_inner{border:14px solid #e5e5e5;border-right-color: transparent;border-top-color: transparent;border-bottom-color: transparent; position: absolute; left:920px;top:38px;}
 	/*内容区*/
-#gouwuche{height: 40px;width: 1200px;background: grey;line-height: 40px;overflow: hidden;}
+#gouwuche{height: 40px;width: 1200px;line-height: 40px;overflow: hidden;}
 #gouwuche p{float: right;}
 #gouwuche p .bigs{font-size: 20px;font-weight: bolder;display:inline-block;margin-right: 16px;}
 #gouwuche p .font_16{font-size: 16px;}
@@ -81,6 +81,22 @@
 
 #gouwuche .formr{float: left;}
 
+table{width: 1200px;height: 136px;}
+table .firstline{width: 1200px;height:34px;line-height: 34px;color: #fff;background: #669900;text-align: center; font-weight: bolder;}
+table .secondline{width: 1200px;height: 100px; text-align: center;}
+table .secondtd{width: 292px;line-height: none; }
+table .secondtd img{float: left;margin-right: 6px;}
+
+table .secondtd .fonts{width:208px;height:58px;float: left;text-align: left}
+table .thirdline td{width:374px;height: 54px;padding-left:1026px }
+
+.result{width: 1200px;height: 50px;border: 1px solid #dcdcdc;line-height: 48px;text-indent: 6px;margin-bottom: 10px;}
+.result .zuo{margin-right: 12px;}
+.result p{float: left;}
+.result .mr{margin-right: 550px;}
+#buttons{width: 400px;height: 50px;padding-left: 950px; padding-bottom: 60px;border-bottom: 1px solid #dcdcdc}
+#buttons .continue{width: 86px;height: 40px;border:0px;border:1px solid #669900;text-align: center;margin-right: 6px;}
+#buttons .jiesuan{width: 150px;height: 50px;background: #669900;font-size: 16px;text-align: center;border: 0px}
 
 	/*底部*/
 	#bottomAd ul{width: 1200px;height: 120px}
@@ -97,7 +113,7 @@
 #bottom{width: 1188px;height: 228px;margin-top:20px;padding-left:12px;padding-bottom: 38px;position: relative; }
 #bottom_up{height: 164px;width: 1188px;border-bottom: 1px solid #dcdcdc}
 #bottom_down{height: 40px;width: 1188px;padding-top: 20px;}
-#bottomShuo_left{height: 164px;width: 165px;margin-right: 134px;float:left;background: url(img/logo.jpg) no-repeat; position: relative;}
+#bottomShuo_left{height: 164px;width: 165px;margin-right: 134px;float:left;background: url(../img/logo.jpg) no-repeat; position: relative;}
 #bottomShuo_left ul{position:absolute; bottom:20px;}
 #bottomShuo_left ul .kefu{font-size: 16px;font-weight: bold; color: #000;}
 #bottomShuo_center{height: 118px;width: 554px;margin-right: 64px;padding-top: 20px;padding-bottom: 26px;float: left;}
@@ -105,17 +121,15 @@
 #bottomShuo_center #splical{margin-right: 0px}
 #bottomShuo_center li h5,#bottomShuo_center li p{margin-bottom: 8px;}
 #bottomShuo_right{width: 194px;height: 118px;padding-top: 20px;padding-bottom: 26px;float: left;}
-#erweima_left{width: 86px;height: 112px;background: url(img/shoujiclient.png) no-repeat;float: left;}
-#erweima_right{width: 84px;height: 120px;background: url(img/guanfangweixing.png) no-repeat;float: right;}
+#erweima_left{width: 86px;height: 112px;background: url(../img/shoujiclient.png) no-repeat;float: left;}
+#erweima_right{width: 84px;height: 120px;background: url(../img/guanfangweixing.png) no-repeat;float: right;}
 #bottom_left{width: 90px;height: 34px;margin-right: 22px;float: left;background:url(img/web.png);}
 #bottom_right{height: 32px;width: 660px; float: left;}
 #bottom_right .font_color a{color: #646464;margin-right: 14px}
 #bottom_right .font_span span{margin-right: 14px}
 #bottom_shopping{width: 48px;height: 162px; position: absolute;top:30px;right: 0px}
 #bottom_shopping li{width: 44px;height: 46px;margin-bottom: 8px;border:1px solid #dcdcdc;background:#f6f6f6;}
-#bottom_shopping .imgs_1{display:inline-block;width: 44px;height: 46px;background: url(../img/shopping_1.png) no-repeat top 10px left 12px;}
-#bottom_shopping .imgs_2{display:inline-block;width: 44px;height: 46px;background: url(../img/shopping_2.png) no-repeat top 10px left 12px;}
-#bottom_shopping .imgs_3{display:inline-block;width: 44px;height: 46px;background: url(../img/shopping_3.png) no-repeat top 10px left 12px;}
+
 	</style>
 	<script type="text/javascript">
 		$(function(){
@@ -324,10 +338,10 @@
 	<div id="gouwuche"><p class="formr"><span class="bigs">我的购物车</span><span class="font_16">送至:</span><span id="addres">北京东城区</span><span >提示:请选择你的收货区域，查看更准确的信息</span></p>
 	<p><span>总计 ( 不含运费 ) : </span><span id="money">￥99</span></p>
 	</div>
-	<table>
+	<table cellspacing="0">
 		<tr class="firstline">
 			<td class="firsttd"><input type="checkbox" name="check">全选</td>
-			<td char="secondtd">商品</td>
+			<td class="secondtd">商品</td>
 			<td>单价</td>
 			<td>优惠</td>
 			<td>数量</td>
@@ -337,19 +351,30 @@
 			<td>操作</td>
 		</tr>
 		<tr class="secondline">
-			<td><input type="checkbox" name="check"></td>
-			<td><img src="">果郡王 泰国进口山竹5斤装 新鲜热带进口水果(偏远地方不发货)2500g</td>
+			<td  class="firsttd"><input type="checkbox" name="check"></td>
+			<!-- <td  class="secondtd"><p class="imgs"></span><span class="guo">果郡王 泰国进口山竹5斤装 新鲜热带进口水果(偏远地方不发货)2500g</span></td> -->
+			<td class="secondtd">
+			    <img src="../img/shanzhu.png">
+			    <p class="fonts">泰国进口山竹5斤装 新鲜热带进口水果<br>(偏远地方不发货)2500g</p>
+				
+			</td>
 			<td> ￥99</td>
 			<td>积分:99</td>
 			<td><span>1</span></td>
 			<td>2.5kg</td>
 			<td>￥99</td>
 			<td>现货</td>
-			<td><span id="collect">收藏</span><span id="delect">删除</span></td>
+			<td><span id="collect">收藏</span>&nbsp;&nbsp;&nbsp;<span id="delect">删除</span></td>
+		</tr>
+		<tr class="thirdline">
+			<td colspan="10">商 品 金 额 :  ￥99 &nbsp;&nbsp;&nbsp;   -已减:  ￥  0</td>
 		</tr>
 	</table>
-	<p><span>删除选中的商品</span><span>清空购物车</span><span class="end">重量总计:<span id="num">2.5kg</span>(含包装)(不含运费) &nbsp;商品总计 : <span id="last">￥99</span></span></p>
-    <button>继续购物</button><button>去结算</button>
+
+	<div class="result"><p class="mr"><span class="zuo">删除选中的商品</span><span>清空购物车</span></p><p><span class="end">重量总计:<span id="num">2.5kg</span>(含包装)(不含运费) &nbsp;商品总计 : <span id="last">￥99</span></span></p></div>
+
+	<div id="buttons"> <button class="continue">继续购物</button><button class="jiesuan">去结算</button></div>
+    
 	
 		<!-- 底部 -->
 		<div id="bottom">
@@ -423,13 +448,7 @@
 					</p>
 				</div>
 			</div>
-			<div id="bottom_shopping">
-				<ul>
-					<li><a class="imgs_1" href="#"></a></li>
-					<li><a class="imgs_2" href="#"></a></li>
-					<li><a class="imgs_3" href="#"></a></li>
-				</ul>
-			</div>
+			
 		</div>
 	</div>
 	
