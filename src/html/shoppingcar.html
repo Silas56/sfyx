@@ -130,6 +130,28 @@ table .thirdline td{width:374px;height: 54px;padding-left:1026px }
 #bottom_shopping{width: 48px;height: 162px; position: absolute;top:30px;right: 0px}
 #bottom_shopping li{width: 44px;height: 46px;margin-bottom: 8px;border:1px solid #dcdcdc;background:#f6f6f6;}
 
+
+/*登录*/
+#denlu{width: 366px;height: 472px;padding: 4px;background: #f5f5f5;border: 2px solid #d3d3d3;position: absolute;left: 314px;top:168px;}
+#denlu .title{width:364px;height:28px;font-size: 16px;color: #000;line-height: 28px;font-weight: bold;}
+#denlu .title #close{width: 21px;height: 21px;display: inline-block;background: url(../img/newxx.png) no-repeat;float: right;}
+
+
+#denlu .nav{width: 338px;height: 30px;padding-top: 18px;border-bottom: 1px solid #ddd;padding-left: 28px; background: #fff}
+#denlu .nav .den{display:block;width: 88px;height: 30px;border:1px solid #ddd;text-align: center;line-height: 30px;margin-right: 16px;background: #fff;float:left;padding-top: 2px;}
+#denlu .nav .zhu{display:block;width: 88px;height: 26px;border: 1px solid #ddd;text-align: center;line-height: 26px;background: #f7f7f7;margin-top: 3px; float: left;}
+
+
+#denlu .content{width: 302px;height: 300px;background: #fff;padding: 28px 32px 52px 32px;position: relative;}
+#denlu .content p{margin-bottom: 4px;}
+#denlu .content input{width:296px;height: 32px;border: 0px;border: 1px solid #ddd;margin-bottom: 14px;text-indent: 8px }
+#denlu .content .splical{width: 80px;height: 34px;margin-right: 4px;}
+#denlu .content .yanzhennum{display: inline-block;width: 110px;height: 32px;border: 1px solid #000;text-align: center;line-height: 32px;margin-right: 4px;}
+#denlu .content .forget{height: 26px;line-height: 26px;width: 60px;padding-left: 236px}
+#denlu .content button{width: 296px;height: 32px;background: #669900;text-align: center;line-height: 32px;color: #fff;border: 0px;border: 1px solid #669900;border-radius: 4px;margin-bottom: 38px;}
+
+
+
 	</style>
 	<script type="text/javascript">
 		$(function(){
@@ -224,7 +246,7 @@ table .thirdline td{width:374px;height: 54px;padding-left:1026px }
 	</script>
 </head>
 <body>
-	<div id="main">
+<div id="main">
 	<!-- 顶部 -->
 	<div class="topMenu">
 		<div class="content">
@@ -450,7 +472,28 @@ table .thirdline td{width:374px;height: 54px;padding-left:1026px }
 			</div>
 			
 		</div>
+
+<div id="denlu">
+	<p class="title">你还未登录 <span id="close"></span></p>
+	<div class="nav">
+		<span class="den">登录</span><span class="zhu">注册</span>
+
 	</div>
-	
+	<div class="content">
+		<p>邮箱/验证手机/用户名</p>
+		<input type="text" name="username">
+		<p>登录密码</p>
+		<input type="password" name="password">
+		 <p>验证码</p>
+		 <input type="text" class="splical"><span class="yanzhennum">1234</span><span>看不清?&nbsp;<a href="#" id="huanyihuan">换一换</a></span>
+		 <p class="forget">忘记密码？</p>
+		 <p><button>登录</button></p>
+		 <p>合作网站账号登录:</p>
+		 <p>QQ | 新浪微博 | 腾讯微博 | 支付宝</p>
+	</div>
+
+</div>
+</div>
+
 </body>
 </html>
