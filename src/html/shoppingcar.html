@@ -132,7 +132,7 @@ table .thirdline td{width:374px;height: 54px;padding-left:1026px }
 
 
 /*登录*/
-#denlu{width: 366px;height: 472px;padding: 4px;background: #f5f5f5;border: 2px solid #d3d3d3;position: absolute;left: 314px;top:168px;}
+#denlu{width: 366px;height: 472px;padding: 4px;background: #f5f5f5;border: 2px solid #d3d3d3;position: absolute;left: 314px;top:168px; display: none}
 #denlu .title{width:364px;height:28px;font-size: 16px;color: #000;line-height: 28px;font-weight: bold;}
 #denlu .title #close{width: 21px;height: 21px;display: inline-block;background: url(../img/newxx.png) no-repeat;float: right;}
 
@@ -242,6 +242,16 @@ table .thirdline td{width:374px;height: 54px;padding-left:1026px }
 			}).on('mouseout',function(){
 				$('#viewshopping').hide();
 			})
+			// 点击结算
+			$('.jiesuan').on('click',function(){
+				$('#denlu').show();
+
+				$('#denlu').find('button').on('click',function(){
+					$('#denlu').hide();
+				})
+
+			})
+
 		})
 	</script>
 </head>
@@ -476,7 +486,7 @@ table .thirdline td{width:374px;height: 54px;padding-left:1026px }
 <div id="denlu">
 	<p class="title">你还未登录 <span id="close"></span></p>
 	<div class="nav">
-		<span class="den">登录</span><span class="zhu">注册</span>
+		<span class="den">登录</span><a href="register.html" target="_blank" class="zhu">注册</a>
 
 	</div>
 	<div class="content">
