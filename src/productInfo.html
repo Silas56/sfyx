@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" type="text/css" href="css/reset.css">
+	<link rel="stylesheet" type="text/css" href="assets/awesome/css_piugin/font-awesome.min.css">
+	<script type="text/javascript" src="assets/jquery/js_piugin/jquery-1.12.0.js"></script>
+	<style type="text/css">
+	#main{width: 1200px;height: auto;margin:0 auto;position: relative;z-index: 100;}
+	#topMenuBg{width: 100%;height: 34px;background:#f7f7f7;position: absolute;top:0px;border-bottom: 1px solid #eeeeee; }
+	.topMenu {width: 100%;height: 34px;text-align: center;position: relative;z-index: 101;padding: 0px;}
+		.topMenu .content{width: 1200px; height:34px;margin:0 auto; line-height: 34px}
+		.topMenu .content .left{text-align: left;float: left;}
+		.topMenu .content .left li{float: left; margin-right: 4px;}
+		.topMenu .content .right{text-align: left;float: right;height: 34px;width: 742px}
+		.topMenu .content .right li{float: left;padding-left: 10px;padding-right: 10px}
+		.topMenu .content .right li a:hover{color: #93bf50}
+		.topMenu .content .right li img{margin-top:10px;}
+    	#topCity{border:1px solid #dcdcdc; height: 20px;width: 46px;margin-top:6px;line-height: 24px; padding-left: 4px;}
+    	#city{color:#000;}
+        /*city的下拉框*/
+    	#allcity{width:428px;height: 282px;border: 1px solid #dcdcdc;padding: 8px;position: absolute; top:28px;left:156px;z-index: 101;background: #fff; display: none;}
+    	#allcity #xx{display: inline-block;margin-top: 4px;margin-bottom: 4px;color: #666;}
+    	#allcity #makexx{width: 20px;height: 20px;border: 1px solid #dcdcdc;border-radius: 50%;text-align: center;line-height: 20px;float: right;color: #dcdcdc}
+    	#allcity #hr{border-top:1px solid #dcdcdc;}
+    	#allcity #zhongdiancity{margin-top:10px;margin-bottom: 10px}
+    	#allcity #zhongdiancity a{margin-right: 12px;color: #0099ff;}
+    	#allcity #morecity{margin-bottom: 4px}
+    	#allcity #morecity p{margin-bottom: 8px;}
+    	#allcity #morecity p span{color: #666;margin-right: 10px;}
+    	#allcity #morecity p a{color: #333;margin-right: 14px}
+        /*我的优选的下拉框*/
+        #mychoose{width:72px;height: 114px;background: #fff;border: 1px solid #dcdcdc;padding:2px 4px 2px 4px; position: absolute; right:366px;top:32px; display: none;}
+        #mychoose li{float: left;margin-bottom: 2px; width: 68px;text-align: center;}
+        /*我的移动客户端*/
+        #moveclient{width: 230px;height: 170px;border:1px solid #dcdcdc;background: url(img/yidong.png) no-repeat;position: absolute;right:190px;top:32px; display: none;}
+        #moveclient #pic1{position: absolute;top:100px;left: 14px}
+        #moveclient #pic2{position: absolute;top:100px;left: 118px}
+        /*微信的二维码*/
+        #erweima{position: absolute; right:16px;top:36px;display: none; }
+        #erweima1{width: 120px;height: 118px;border: 1px solid #dcdcdc;background: url(img/weixingma.png) no-repeat;}
+        /*帮助中心*/
+        #help{width:72px;height: 120px;background: #fff;border: 1px solid #dcdcdc;padding:2px 4px 2px 4px; position: absolute; right:200px;top:32px; display: none;}
+        #help li{float: left;margin-bottom: 2px; width: 68px;text-align: center;}
+        /*网站导航*/
+        #webNav{width: 738px;height: 140px;border:1px solid #dcdcdc; padding: 20px;position: absolute;right:138px;top:32px;display: none; background: #fff; z-index: 100000;}
+        #webNav div{float: left; width: 220px;height: 130px; border-right: 1px solid #dcdcdc;margin-right: 38px}
+        #webNav #sp{margin: 0px; width: 140px;border:0px;}
+        #webNav div p{margin-bottom: 14px;}
+        #webNav div p a{margin-right: 14px;}
+        #goodssort{color: #669900}
+        #special{color: #fa6400;}
+        #morething{color: #646464;}
+        /*test*/
+        #test{clear: both;}
+         #search{width: 1200px;height: 82px;padding-top: 14px;}
+	#search .search_left{width: 242px;height: 82px;margin-right: 192px;float: left;}
+	#search .search_center{width: 516px;height: 66px;margin-right: 54px;padding-top: 16px;float: left;}
+	#search .search_right{width: 196px;height: 66px;padding-top: 16px;float: left;position: relative;}
+	#search .search_left .logo{width: 242px;height: 60px;background: url(img/logoall.png) no-repeat;}
+	#search .search_left .logo_font{width: 242px; height: 22px; background: url(img/logoall_font.png) no-repeat;}
+	#search .search_center div input{width: 430px;height: 36px;border:1px solid #669900;text-indent: 4px;color: #999}
+	#search .search_center div a{ display:inline-block;width: 84px;height: 38px;background: #669900;text-align: center;line-height: 38px;font-size: 16px;color: #dfe6d0}
+	#search .search_center p a{display: inline-block;margin-right: 10px;}
+	#search .search_right #shoppingClick p{width: 152px;height: 32px;border:1px solid #dcdcdc;background: url(img/myshoppingcar.png) no-repeat top 2px left 17px;float: left;}
+	#search .search_right #shoppingClick a{width: 42px;height: 34px;background: #fa9600;font-size: 16px;color: #fff;display: inline-block;text-align: center;line-height: 34px;}
+	/*shoppingview*/
+	#viewshopping{width: 326px;height: 76px;border:1px solid #dcdcdc;position: absolute;right:0px;top:98px;background:url(img/shoppingtan.png) no-repeat left 88px top 22px; display: none; background: #fff;z-index: 1000}
+	#viewshopping #view_font{width: 160px;height: 34px;position: absolute;top:22px;left: 128px;}
+	#viewshopping #view_font .up{color: #666; margin-bottom: 4px;}
+	#viewshopping #view_font .down{color: #969696}
+	#viewshopping #view_font .down a{color: #669900}
+
+	/*横向导航栏*/
+	#nav{width: 1200px;height: 34px;margin-top: 12px;border-bottom: 2px solid #669900}
+	#nav span{display: inline-block;width: 204px;height: 34px;color: fff;background: #669900;text-align: center;line-height: 34px;float: left;}
+	#nav span a{font-size: 16px;color: #fff;font-weight: bold;}
+	#nav ul{width:970px;height: 34px;margin-left: 26px;line-height: 34px;float: left; }
+	#nav ul li{float: left;margin-right: 48px; color: #000;font-weight: bold;}
+	#nav ul li .nav_first{color: #669957}
+	
+	#nav ul .nav_border a{border-right: 1px solid #dcdcdc;padding-right: 48px}
+
+
+	
+	#bottomAd ul{width: 1200px;height: 120px}
+	#bottomAd li{width: 300px;height: 120px;float: left;}
+	#bottomAd .qq{background: url(img/qq.jpg) no-repeat top 38px left 55px;}
+	#bottomAd .cd{background: url(img/cd.jpg) no-repeat top 38px left 55px;}
+	#bottomAd .qc{background: url(img/qc.jpg) no-repeat top 38px left 55px;}
+	#bottomAd .sf{background: url(img/sf.jpg) no-repeat top 38px left 55px;}
+	/*#bottomShuo{margin-top:20px;}
+	#bottomLog{width: 290px;height: 145px;margin-left: 10px;background:url(img/logo.jpg) no-repeat;}
+	#bottomLog ul{position:absolute; bottom:20px;}
+	#bottomLog ul .kefu{font-size: 16px;font-weight: bold; color: #000;}
+*/
+/*进攻*/
+.title{width: 1200px;height: 38px;line-height: 38px;}
+.title .bigs{font-size: 16px;color: #000}
+
+
+#fight{width: 1200px;height: 624px;background: #fff}
+#fight .fight_left{width: 964px;height: 408px;border: 1px solid #dcdcdc;margin-right: 10px;float: left;padding-top: 14px;padding-left: 12px;}
+#fight .fight_right{width: 212px;height: 624px;float: left; background: url(img/info_right.png) no-repeat;}
+#fight .fight_left_l{width: 392px;height: 400px;float: left;margin-right: 6px;}
+#fight .fight_right_r{width: 566px;height: 400px;float: left;}
+#fight .fight_left_l .fight_left_l_up_left{width: 56px;height: 340px;background:url(img/info_small.png) no-repeat;float: left;margin-right: 4px;}
+#fight .fight_left_l .fight_left_l_up_right p{width: 332px;height: 340px;background:url(img/info_big.png) no-repeat;float: left;}
+.fight_left_l_up{width: 392px;height: 354px;border-bottom: 1px solid #dcdcdc}
+.fight_left_l_down{width: 392px;height: 34px;background: url(img/info_qietu.png) no-repeat;margin-top: 10px;}
+.fight_right_r .font_16b{font-size: 14px;font-weight: bolder;color: #000;margin-bottom: 4px;}
+.fight_right_r .orange{width: 544px;height: 32px;background:url(img/info_bg.png);padding-left: 30px;padding-top: 58px;margin-bottom: 10px;color: #fff}
+.fight_right_r .orange span{font-size: 36px;font-weight:}
+
+.fight_right_r div{width: 496px;height: 188px;padding-left: 54px;}
+.fight_right_r div p{height: 28px;line-height: 28px}
+.fight_right_r div .info_add{height: 44px}
+.fight_right_r div .info_add a{display:block;width:160px;height: 44px;background: #669900;line-height: 44px;text-align: center; color: #fff;border-radius: 4px;margin-right: 4px;float: left;}
+.fight_right_r div .imgs_4{display:block;width: 140px;height: 44px;background: url(img/info_phone.png) no-repeat 6px 4px;float: left;border: 1px solid #dcdcdc}
+/*底部*/
+#bottom{width: 1188px;height: 228px;margin-top:20px;padding-left:12px;padding-bottom: 38px;position: relative; }
+#bottom_up{height: 164px;width: 1188px;border-bottom: 1px solid #dcdcdc}
+#bottom_down{height: 40px;width: 1188px;padding-top: 20px;}
+#bottomShuo_left{height: 164px;width: 165px;margin-right: 134px;float:left;background: url(img/logo.jpg) no-repeat; position: relative;}
+#bottomShuo_left ul{position:absolute; bottom:20px;}
+#bottomShuo_left ul .kefu{font-size: 16px;font-weight: bold; color: #000;}
+#bottomShuo_center{height: 118px;width: 554px;margin-right: 64px;padding-top: 20px;padding-bottom: 26px;float: left;}
+#bottomShuo_center li{height: 118px;width: 64px;margin-right: 56px;float: left;}
+#bottomShuo_center #splical{margin-right: 0px}
+#bottomShuo_center li h5,#bottomShuo_center li p{margin-bottom: 8px;}
+#bottomShuo_right{width: 194px;height: 118px;padding-top: 20px;padding-bottom: 26px;float: left;}
+#erweima_left{width: 86px;height: 112px;background: url(img/shoujiclient.png) no-repeat;float: left;}
+#erweima_right{width: 84px;height: 120px;background: url(img/guanfangweixing.png) no-repeat;float: right;}
+#bottom_left{width: 90px;height: 34px;margin-right: 22px;float: left;background:url(img/web.png);}
+#bottom_right{height: 32px;width: 660px; float: left;}
+#bottom_right .font_color a{color: #646464;margin-right: 14px}
+#bottom_right .font_span span{margin-right: 14px}
+#bottom_shopping{width: 48px;height: 162px; position: absolute;top:30px;right: 0px}
+#bottom_shopping li{width: 44px;height: 46px;margin-bottom: 8px;border:1px solid #dcdcdc;background:#f6f6f6;}
+#bottom_shopping .imgs_1{display:inline-block;width: 44px;height: 46px;background: url(img/shopping_1.png) no-repeat top 10px left 12px;}
+#bottom_shopping .imgs_2{display:inline-block;width: 44px;height: 46px;background: url(img/shopping_2.png) no-repeat top 10px left 12px;}
+#bottom_shopping .imgs_3{display:inline-block;width: 44px;height: 46px;background: url(img/shopping_3.png) no-repeat top 10px left 12px;}
+	</style>
+<script type="text/javascript">
+		$(function(){
+			// 城市
+			$('#topCity').on('mouseover',function(){
+				$('#allcity').show();
+				$('#allcity').on('mouseover',function(){
+					$('#allcity').show();
+				}).on('mouseout',function(){
+					$('#allcity').hide();
+				})
+				$('#topCity').find('i').removeClass().addClass("icon-caret-up")
+			}).on('mouseout',function(){
+			$('#allcity').hide();
+			$('#topCity').find('i').removeClass().addClass("icon-caret-down")
+		    })
+
+		    $('#allcity').on('click','a',function(){
+		    	var kerword = $(this).text();
+		    	$('#city').text(kerword);
+
+		    })
+            // 我的优选
+		    $('#topChoose').on('mouseover',function(){
+		    	$('#mychoose').show();
+		    	$('#topChoose').find('i').removeClass().addClass("icon-caret-up")
+		    	$('#mychoose').on('mouseover',function(){
+		    		$('#mychoose').show();
+		    	}).on('mouseout',function(){
+		    		$('#mychoose').hide();
+		    	})
+		    }).on('mouseout',function(){
+		    	$('#mychoose').hide();
+		    	$('#topChoose').find('i').removeClass().addClass("icon-caret-down")
+		    })
+		    // 微信二维码
+		    $('#weixing').on('mouseover',function(){
+		    	$('#erweima').show()
+		    }).on('mouseout',function(){
+		    	$('#erweima').hide()
+		    })
+		    // 帮助中心
+		    $('#helpcenter').on('mouseover',function(){
+		    	$('#help').show();
+		    	$('#helpcenter').find('i').removeClass().addClass("icon-caret-up")
+		    	$('#help').on('mouseover',function(){
+		    		$('#help').show();
+		    	}).on('mouseout',function(){
+		    		$('#help').hide();
+		    	})
+		    }).on('mouseout',function(){
+		    	$('#help').hide();
+		    	$('#helpcenter').find('i').removeClass().addClass("icon-caret-down")
+		    })
+		    // 移动客户端
+		    $('#topClient').on('mouseover',function(){
+		    	$('#moveclient').show();
+		    	
+		    	$('#moveclient').on('mouseover',function(){
+		    		$('#moveclient').show();
+		    	}).on('mouseout',function(){
+		    		$('#moveclient').hide();
+		    	})
+		    }).on('mouseout',function(){
+		    	$('#moveclient').hide();
+		    	
+		    })
+		    //网站导航
+		    $('#topNav').on('mouseover',function(){
+		    	$('#webNav').show();
+		    	$('#topNav').find('i').removeClass().addClass("icon-caret-up")
+		    	$('#webNav').on('mouseover',function(){
+		    		$('#webNav').show();
+		    	}).on('mouseout',function(){
+		    		$('#webNav').hide();
+		    	})
+		    }).on('mouseout',function(){
+		    	$('#webNav').hide();
+		    	$('#topNav').find('i').removeClass().addClass("icon-caret-down")
+		    })
+		    // 购物车弹框
+		    $('#shoppingClick').on('mouseover',function(){
+				$('#viewshopping').show();
+				$('#viewshopping').on('mouseover',function(){
+					$('#viewshopping').show();
+				}).on('mouseout',function(){
+					$('#viewshopping').hide();
+				})
+			}).on('mouseout',function(){
+				$('#viewshopping').hide();
+			})
+		})
+	</script>
+</head>
+<body>
+	<div id="main">
+		<div class="topMenu">
+		<div class="content">
+			<ul class="left">
+				<li>冷链配送99元顺丰到家 送至:</li>
+				<li><div id="topCity"><span id='city'>北京</span>&nbsp;<i class="icon-caret-down" style="margin-left: 4px"></i></div></li>
+			</ul>
+			<ul class="right">
+				<li>嘿，&nbsp;欢迎来顺丰优选! &nbsp;<a href="#">请登录</a>&nbsp;<a href="#">免费注册</a></li>
+				<li><a href="#">我的订单</a></li>
+				<li id="topChoose"><a href="#">我的优选<i class="icon-caret-down"></i></a></li>
+				<li id="topClient"><a href="#"><i  id="icons" class="icon-mobile-phone icon-2x" style="position:relative;top:4px; margin-right:4px"></i>移动客户端</a></li>
+				<li id="helpcenter"><a href="#">帮助中心<i class="icon-caret-down"></i></a></li>
+				<li id="topNav"><a href="#">网站导航<i class="icon-caret-down"></i></a></li>
+				<li><a title="关注顺丰优选微博" href="#"><img src="img/weibo_2221.png"></a>&nbsp;<img id="weixing" src="img/weixing2221.png"></li>
+			</ul>
+		</div>
+	</div>
+	<div id='allcity'>
+		<p id="xx">请选择您的收货城市:</p>
+		<div id="makexx">x</div>
+		<div id="hr"></div>
+		<div id="zhongdiancity">
+			<a class="goodCity" href="#">北京</a>
+			<a class="goodCity" href="#">上海</a>
+			<a class="goodCity" href="#">广州</a>
+			<a class="goodCity" href="#">深圳</a>
+			<a class="goodCity" href="#">天津</a>
+			<a class="goodCity" href="#">苏州</a>
+			<a class="goodCity" href="#">南京</a>
+			<a class="goodCity" href="#">无锡</a>
+			<a class="goodCity" href="#">青岛</a>
+			<a class="goodCity" href="#">武汉</a>
+		</div>
+		<div id="morecity">更多城市:
+			<p><span class="othercitys">华东:</span><a  href="#">上海</a><a  href="#">浙江</a><a  href="#">江苏</a><a href="#">安徽</a></p>
+			<p><span class="othercitys">华南:</span><a href="#">广东</a><a href="#">福建</a><a href="#">海南</a><a href="#">广西</a></p>
+			<p><span class="othercitys">华北:</span><a href="#">北京</a><a href="#">天津</a><a href="#">河北</a><a href="#">山东</a><a href="#">山西</a><a href="#">内蒙古</a></p>
+			<p><span class="othercitys">华中:</span><a href="#">湖北</a><a href="#">江西</a><a href="#">湖南</a><a href="#">河南</a></p>
+			<p><span class="othercitys">东北:</span><a href="#">辽宁</a><a href="#">吉林</a><a href="#">黑龙江</a></p>
+			<p><span class="othercitys">西南:</span><a href="#">重庆</a><a href="#">四川</a><a href="#">云南</a><a href="#">贵州</a><a href="">西藏</a></p>
+			<p><span class="othercitys">西北:</span><a href="#">陕西</a><a href="#">甘肃</a><a href="#">宁夏</a><a href="#">青海</a><a href="">新疆</a></p>
+		</div>
+	</div>
+	<div id="mychoose">
+		<ul>
+			<li><a href="#">我的订单</a></li>
+			<li><a href="#">我的积分</a></li>
+			<li><a href="#">我的收藏</a></li>
+			<li><a href="#">我的优选卡</a></li>
+			<li><a href="#">我的优惠券</a></li>
+		</ul>
+	</div>
+	<div id = 'moveclient'>
+		<a href="#"><img id="pic1" src="img/applestore.png"></a>
+		<a href="#"><img id="pic2"; src="img/android.png"></a>		
+	</div>
+	<div id="erweima">
+		<div id="erweima1"></div>
+	</div>
+	<div id="help">
+		<ul>
+			<li><a href="#">购物指南</a></li>
+			<li><a href="#">配送服务</a></li>
+			<li><a href="#">支付方式</a></li>
+			<li><a href="#">售后服务</a></li>
+			<li><a href="#">客服邮箱</a></li>
+			<li><a href="#">投诉与建议</a></li>
+		</ul>
+	</div>
+	<div id="webNav">
+		<div>
+				<p><h5 id="goodssort">商品分类</h5></p>
+				<p><a href="#">肉类海鲜</a><a href="#">熟食蛋奶</a><a href="#">水果蔬菜</a></p>
+				<p><a href="#">酒水饮料</a><a href="#">休闲食品</a><a href="#">冲调茶饮</a></p>
+				<p><a href="#">粮油副食</a><a href="#">南北干货</a></p>
+		</div>
+		<div>
+			<p><h5 id="special">特色频道</h5></p>
+			<p><a href="#">跨境直发</a><a href="#">企业专区</a><a href="#">红酒廊</a></p>
+			<p><a href="#">寰宇美食</a></p>
+		</div>
+		<div id="sp">
+			<p><h5 id="morething">更多</h5></p>
+			<p><a href="#">客户端</a><a href="#">关注我们</a></p>
+			<p>客服电话:4009-111-111</p>
+		</div>
+	</div>
+	<div id="test"></div>
+<!-- 搜索栏 -->
+	<div id="search">
+				<div class="search_left">
+					<p class="logo"></p>
+					<p class="logo_font"></p>
+				</div>
+				<div class="search_center">
+					<div>
+						<input type="text" name="" value="月饼"><a href="#">搜&nbsp;索</a>
+					</div>
+					<p>
+						<a href="#">大闸蟹</a>
+						<a href="#">榴莲</a>
+						<a href="#">白虾</a>
+						<a href="#">大米</a>
+						<a href="#">猕猴桃</a>
+						<a href="#">红酒</a>
+						<a href="#">牛肉</a>
+						<a href="#">苹果</a>
+					</p>
+				</div>
+				<div class="search_right">
+					<div id="shoppingClick">
+						<p></p><a href=""><span id="shoppingNumber">0</span></a>
+					</div>					
+				</div>
+			</div>
+			<div id="viewshopping">
+				<div id="view_font">
+					<p class="up">购物车中暂无商品</p>
+					<p class="down">如你已添加商品,请<a href="#">登录</a>查看</p>
+				</div>
+			</div>
+			<div style="clear: both"></div>
+<!-- 横向导航栏 -->
+		<div id="nav">
+				<span><a href="#">精选商品分类</a></span>
+				<ul>
+					<li ><a class="nav_first" href="#">首页</a></li>
+					<li><a href="#">优选商城</a></li>
+					<li><a href="#">优选生鲜</a></li>
+					<li><a href="#">优选海淘</a></li>
+					<li class="nav_border"><a href="#">企业专区</a></li>
+					<li><a href="#">红酒廊</a></li>
+					<li><a href="#">寰宇美食</a></li>
+				</ul>
+				
+		</div>	
+
+<!-- 商品详情 -->
+<p class="title"><span class="bigs">生鲜食品</span> > 水果 > 进口水果 > 果郡王 > 泰国进口山竹5斤装 新鲜 热带进口水果 (偏远地区不发货) 2500g </p>
+<div id="fight">
+	<div class="fight_left">
+		<div class="fight_left_l">
+			<div class="fight_left_l_up">
+				<div class="fight_left_l_up_left"></div>
+				<div class="fight_left_l_up_right"><p class="fadajing"></p></div>
+			</div>
+			<div class="fight_left_l_down"></div>
+		</div>
+		<div class="fight_right_r">
+			<p class="font_16b">果郡王 泰国进口山竹5斤装 新鲜 热带进口水果 (偏远地区不发货)</p>
+			<p class="font_16b">2500g</p>
+			<p class="orange">优选价 : ￥  <span>99</span></p>
+			<div>
+				<p>送至:<span>北京东城区</span></p>
+				<p>运费: ￥9</p>
+				<p class="info_add"><a href="#">加入购物车</a><span class="imgs_4"></span></p>
+			</div>
+		</div>
+	</div>
+	<div class="fight_right"></div>
+</div>
+<!-- 底部 -->
+		<div id="bottom">
+			<div id="bottom_up">
+				<div id="bottomShuo_left">
+					<ul class="position_1">
+					   <li class="kefu">4009-111-111</li>
+					   <li>周一至周日8:30-22:00</li>
+				    </ul>
+				</div>
+			    <div id="bottomShuo_center">
+			    	<ul>
+			    		<li>
+			    			<h5>购物指南</h5>
+			    			<p><a href="#">积分制度</a></p>
+			    			<p><a href="#">会员介绍</a></p>
+			    			<p><a href="#">购物流程</a></p>
+			    			<p><a href="#">常见问题</a></p>
+			    		</li>
+			    		<li>
+			    			<h5>配送指南</h5>
+			    			<p><a href="#">配送政策</a></p>
+			    			<p><a href="#">开箱验货</a></p>
+			    			<p><a href="#">配送运费</a></p>
+			    			<p><a href="#">配送范围</a></p>
+			    		</li>
+			    		<li>
+			    			<h5>支付方式</h5>
+			    			<p><a href="#">货到付款</a></p>
+			    			<p><a href="#">在线支付</a></p>
+			    			<p><a href="#">优选卡</a></p>
+			    			<p><a href="#">发票制度</a></p>
+			    		</li>
+			    		<li>
+			    			<h5>售后服务</h5>
+			    			<p><a href="#">退款说明</a></p>
+			    			<p><a href="#">退换货流程</a></p>
+			    			<p><a href="#">退换货政策</a></p>
+			    			<p><a href="#">隐私政策</a></p>
+			    		</li>
+			    		<li id="splical">
+			    			<h5>商家中心</h5>
+			    			<p><a href="#">商家入驻</a></p>
+			    			<p><a href="#">商家规则</a></p>
+			    		</li>
+			    	</ul>
+			    </div>
+				<div id="bottomShuo_right">
+					<div id="erweima_left"></div>
+					<div id="erweima_right"></div>
+				</div>				
+			</div>
+			<div style="clear: both"></div>
+			<div id="bottom_down">
+				<div id="bottom_left">
+				</div>
+				<div id="bottom_right">
+					<p class="font_color">
+						<a href="#">关于我们</a>
+						<a href="#">联系我们</a>
+						<a href="#">招聘人才</a>
+						<a href="#">友情链接</a>
+						<a href="#">供应商申请</a>
+						<span>Copyright&copy;&nbsp;顺丰优选&nbsp;sfbest.com版权所有</span>
+					</p>
+					<p class="font_span">
+						<span>京公网安备11010502026831号</span>
+						<span>京ICP证150325号</span>
+						<span>商品流通许可证SP1101131210068671(1-1)号</span>
+						<span>企业营业执照</span>
+					</p>
+				</div>
+			</div>
+			<div id="bottom_shopping">
+				<ul>
+					<li><a class="imgs_1" href="#"></a></li>
+					<li><a class="imgs_2" href="#"></a></li>
+					<li><a class="imgs_3" href="#"></a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	
+</body>
+</html>
