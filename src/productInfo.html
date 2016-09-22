@@ -8,6 +8,7 @@
 	<link rel="stylesheet" type="text/css" href="assets/lxzoom/jquery.lxzoom.css">
 	<script type="text/javascript" src="assets/jquery/js_piugin/jquery-1.12.0.js"></script>
 	<script type="text/javascript" src="assets/lxzoom/jquery.lxzoom.js"></script>
+	<script type="text/javascript" src="js/mycookie.js"></script>
 	<style type="text/css">
 	#main{width: 1200px;height: auto;margin:0 auto;position: relative;z-index: 100;}
 	#topMenuBg{width: 100%;height: 34px;background:#f7f7f7;position: absolute;top:0px;border-bottom: 1px solid #eeeeee; }
@@ -241,6 +242,40 @@
 			}).on('mouseout',function(){
 				$('#viewshopping').hide();
 			})
+
+			// 添加cookie
+			//存放所有的数据
+			
+			var arrForCookie=[];
+			// 绑定“加入购物车”的点击事件
+			$('#addGoods').on('click',function(){
+				
+				var name = $('#name').text();
+				var price =$('#price').text();
+				var weight = $('#weight').text();
+				var pic = $('#pic').attr('src');
+				var objForCookie = {};
+				objForCookie.name=name;
+				objForCookie.price=price;
+				objForCookie.weight=weight;
+				objForCookie.pic=pic;
+				//把对象压倒数组中
+				arrForCookie.push(objForCookie);
+				// 把数组转化成字符
+				var transform = JSON.stringify(arrForCookie);
+				// 添加到cookie
+				addCookie("go",transform,7);
+
+				// 跳转到购物车
+				location.href = "html/shoppingcar.html";
+
+
+
+
+			})
+
+			
+
 		})
 	</script>
 </head>
@@ -390,7 +425,7 @@
 		<div class="fight_left_l">
 			<div class="fight_left_l_up">
 				<div class="fight_left_l_up_left"></div>
-				<div id="box"  class=" lxzoom"><img src="img/original_1800215401_1_1.jpg" style="width:332px;height:330px"><span></span></div>
+				<div id="box"  class=" lxzoom"><img id="pic" src="img/original_1800215401_1_1.jpg" style="width:332px;height:330px"><span></span></div>
 			</div>
 			<div class="fight_left_l_down"></div>
 		</div>
@@ -401,7 +436,7 @@
 			<div>
 				<p>送至:<span>北京东城区</span>到货后，预计48小时内为你送达</p>
 				<p>运费: ￥9</p>
-				<p class="info_add"><a href="#">加入购物车</a><a class="buy" href="#">一键购买</a><span class="imgs_4"></span></p>
+				<p class="info_add"><a id="addGoods" href="javascript:void(0)">加入购物车</a><a class="buy" href="#">一键购买</a><span class="imgs_4"></span></p>
 			</div>
 		</div>
 	</div>

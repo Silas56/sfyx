@@ -6,6 +6,7 @@
 	<link rel="stylesheet" type="text/css" href="../css/reset.css">
 	<link rel="stylesheet" type="text/css" href="../assets/awesome/css_piugin/font-awesome.min.css">
 	<script type="text/javascript" src="../assets/jquery/js_piugin/jquery-1.12.0.js"></script>
+	<script type="text/javascript" src="../js/mycookie.js"></script>
 	<style type="text/css">
 	#main{width: 1200px;height: auto;margin:0 auto;position: relative;z-index: 100;}
 	/*顶部*/
@@ -252,6 +253,35 @@ table .thirdline td{width:374px;height: 54px;padding-left:1026px }
 
 			})
 
+// 获取cookie的数据
+			var getData ="";
+			 getData = getCookie("go");
+			 console.log(getData);
+			
+			var tr = $('<tr/>').addClass('secondline');
+			var arrForData = JSON.parse(getData);
+			var getedData = arrForData[0];
+			console.log(arrForData.length);
+			// for(var i=0;i<arr)
+			var newTr = $('</tr>').addClass('secondline');
+			var td1 = $('<td/>').addClass('firsttd').html('<input type="checkbox" name="check">');
+			var td2 = $('<td/>').addClass('secondtd').html('<img src="../'+getedData.pic+'" width=61px height=62px><p class="fonts">'+getedData.name+'</p>');
+			var td3 =$('<td/>').html(getedData.price);
+			var td4 =$('<td/>').html('积分99');
+			var td5 =$('<td/>').html('<span>1</span>');
+			var td6 =$('<td/>').html(getedData.weight);
+			var td7 =$('<td/>').html(getedData.price);
+			var td9 =$('<td/>').html('现货');
+			var td10 =$('<td/>').html('<span class="collect">收藏</span>&nbsp;&nbsp;&nbsp;<span class="delect">删除</span>');
+			
+			
+
+			tr.append([td1,td2,td3,td4,td5,td6,td7,td9,td10]).insertAfter('.secondline');
+			$('.delect').on('click',function(){
+				this.closest('tr').remove();
+			})
+			
+
 		})
 	</script>
 </head>
@@ -396,7 +426,7 @@ table .thirdline td{width:374px;height: 54px;padding-left:1026px }
 			<td>2.5kg</td>
 			<td>￥99</td>
 			<td>现货</td>
-			<td><span id="collect">收藏</span>&nbsp;&nbsp;&nbsp;<span id="delect">删除</span></td>
+			<td><span class="collect">收藏</span>&nbsp;&nbsp;&nbsp;<span class="delect">删除</span></td>
 		</tr>
 		<tr class="thirdline">
 			<td colspan="10">商 品 金 额 :  ￥99 &nbsp;&nbsp;&nbsp;   -已减:  ￥  0</td>
