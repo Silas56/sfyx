@@ -246,10 +246,14 @@
 			// 添加cookie
 			//存放所有的数据
 			
-			var arrForCookie=[];
+            var arrForCookie=[];
 			// 绑定“加入购物车”的点击事件
 			$('#addGoods').on('click',function(){
-				
+
+				// 控制添加数量
+				//arrForCookie=[];
+
+
 				var name = $('#name').text();
 				var price =$('#price').text();
 				var weight = $('#weight').text();
@@ -265,6 +269,7 @@
 				var transform = JSON.stringify(arrForCookie);
 				// 添加到cookie
 				addCookie("go",transform,7);
+
 
 				// 跳转到购物车
 				location.href = "html/shoppingcar.html";

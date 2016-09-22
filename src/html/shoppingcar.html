@@ -84,7 +84,7 @@
 
 table{width: 1200px;height: 136px;}
 table .firstline{width: 1200px;height:34px;line-height: 34px;color: #fff;background: #669900;text-align: center; font-weight: bolder;}
-table .secondline{width: 1200px;height: 100px; text-align: center;}
+table .secondline{width: 1200px;height: 100px; text-align: center;display: }
 table .secondtd{width: 292px;line-height: none; }
 table .secondtd img{float: left;margin-right: 6px;}
 
@@ -258,27 +258,34 @@ table .thirdline td{width:374px;height: 54px;padding-left:1026px }
 			 getData = getCookie("go");
 			 console.log(getData);
 			
-			var tr = $('<tr/>').addClass('secondline');
+			
 			var arrForData = JSON.parse(getData);
-			var getedData = arrForData[0];
-			console.log(arrForData.length);
-			// for(var i=0;i<arr)
-			var newTr = $('</tr>').addClass('secondline');
-			var td1 = $('<td/>').addClass('firsttd').html('<input type="checkbox" name="check">');
-			var td2 = $('<td/>').addClass('secondtd').html('<img src="../'+getedData.pic+'" width=61px height=62px><p class="fonts">'+getedData.name+'</p>');
-			var td3 =$('<td/>').html(getedData.price);
-			var td4 =$('<td/>').html('积分99');
-			var td5 =$('<td/>').html('<span>1</span>');
-			var td6 =$('<td/>').html(getedData.weight);
-			var td7 =$('<td/>').html(getedData.price);
-			var td9 =$('<td/>').html('现货');
-			var td10 =$('<td/>').html('<span class="collect">收藏</span>&nbsp;&nbsp;&nbsp;<span class="delect">删除</span>');
+			
+			$.each(arrForData,function(idx,item){
+				var tr = $('<tr/>').addClass('secondline');
+				var td1 = $('<td/>').addClass('firsttd').html('<input type="checkbox" name="check">');
+				var td2 = $('<td/>').addClass('secondtd').html('<img src="../'+item.pic+'" width=61px height=62px><p class="fonts">'+item.name+'</p>');
+				var td3 =$('<td/>').html(item.price);
+				var td4 =$('<td/>').html('积分99');
+				var td5 =$('<td/>').html('<span>1</span>');
+				var td6 =$('<td/>').html(item.weight);
+				var td7 =$('<td/>').html(item.price);
+				var td9 =$('<td/>').html('现货');
+				var td10 =$('<td/>').html('<span class="collect">收藏</span>&nbsp;&nbsp;&nbsp;<span class="delect">删除</span>');
+
+				tr.append([td1,td2,td3,td4,td5,td6,td7,td9,td10]).insertAfter('#secondLine');
 			
 			
 
-			tr.append([td1,td2,td3,td4,td5,td6,td7,td9,td10]).insertAfter('.secondline');
+				
+
+			})
+			
+			
 			$('.delect').on('click',function(){
 				this.closest('tr').remove();
+				removeCookie('go');
+
 			})
 			
 
@@ -412,7 +419,7 @@ table .thirdline td{width:374px;height: 54px;padding-left:1026px }
 			<td>库存状况</td>
 			<td>操作</td>
 		</tr>
-		<tr class="secondline">
+		<tr class="secondline" id="secondLine">
 			<td  class="firsttd"><input type="checkbox" name="check"></td>
 			<!-- <td  class="secondtd"><p class="imgs"></span><span class="guo">果郡王 泰国进口山竹5斤装 新鲜热带进口水果(偏远地方不发货)2500g</span></td> -->
 			<td class="secondtd">
