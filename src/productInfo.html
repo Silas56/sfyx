@@ -103,9 +103,9 @@
 .title .bigs{font-size: 16px;color: #000}
 
 
-#fight{width: 1200px;height: 624px;background: #fff}
+#fight{width: 1200px;height: 500px;background: #fff}
 #fight .fight_left{width: 964px;height: 408px;border: 1px solid #dcdcdc;margin-right: 10px;float: left;padding-top: 14px;padding-left: 12px;}
-#fight .fight_right{width: 212px;height: 624px;float: left; background: url(img/info_right.png) no-repeat;}
+#fight .fight_right{width: 212px;height: 500px;float: left; background: url(img/info_right.png) no-repeat;}
 #fight .fight_left_l{width: 392px;height: 400px;float: left;margin-right: 6px;}
 #fight .fight_right_r{width: 566px;height: 400px;float: left;}
 #fight .fight_left_l .fight_left_l_up_left{width: 56px;height: 340px;background:url(img/pg.png) no-repeat;float: left;margin-right: 4px;}
@@ -124,6 +124,13 @@
 .fight_right_r div .info_add a{display:block;width:160px;height: 44px;background: #669900;line-height: 44px;text-align: center; color: #fff;border-radius: 4px;margin-right: 4px;float: left;}
 .fight_right_r div .info_add .buy{display:block;width:120px;height: 44px;background: #fa8e19;line-height: 44px;text-align: center; color: #fff;border-radius: 4px;margin-right: 4px;float: left;}
 .fight_right_r div .imgs_4{display:block;width: 140px;height: 44px;background: url(img/info_phone.png) no-repeat 6px 4px;float: left;border: 1px solid #dcdcdc}
+/*商品信息*/
+#productinfo{width: 1200px;height: 360px;}
+#productinfo .left{width: 188px;height: 360px;background: url(img/product_2.png) no-repeat;float: left; margin-right: 16px;}
+#productinfo .right{width: 996px;height: 360px;background: url(img/product_1.png) no-repeat; float: left;}
+/*懒加载*/
+#datalist{width: 1000px;height:auto;padding-left: 200px;}
+.li_img{width: 1000px;height: 100px}
 /*底部*/
 #bottom{width: 1188px;height: 228px;margin-top:20px;padding-left:12px;padding-bottom: 38px;position: relative; }
 #bottom_up{height: 164px;width: 1188px;border-bottom: 1px solid #dcdcdc}
@@ -277,6 +284,29 @@
 
 
 
+			})
+			// 懒加载
+			var datalist = $('#datalist');
+			$.ajaxSetup({
+				url:"data/apple.json",
+				dataType:"json",
+				success:function(res){
+					console.log(res);
+					var ul = $('<ul/>');
+					$.each(res,function(idx,itm){
+						console.log(itm.src)
+						$('<li/>').addClass('li_img').css({background:"url("+itm.src+") no-repeat"}).appendTo(ul);
+					})
+					datalist.append(ul);
+
+				}
+			});
+			$.ajax();
+			$(window).on('scroll',function(){
+				var scrollTop=$(window).scrollTop();
+				if(scrollTop>=$(document).height()-$(window).height()-400){
+					$.ajax();
+				}
 			})
 
 			
@@ -446,6 +476,15 @@
 		</div>
 	</div>
 	<div class="fight_right"></div>
+</div>
+<!-- 商品信息 -->
+<div id="productinfo">
+	<div class="left"></div>
+	<div class="right"></div>
+</div>
+<!-- 懒加载 -->
+<div id="datalist">
+	
 </div>
 <!-- 底部 -->
 		<div id="bottom">
