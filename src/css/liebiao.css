@@ -22,20 +22,20 @@
 	#allcity #morecity p span{color: #666;margin-right: 10px;}
 	#allcity #morecity p a{color: #333;margin-right: 14px}
 /*我的优选的下拉框*/
-    #mychoose{width:72px;height: 114px;background: #fff;border: 1px solid #dcdcdc;padding:2px 4px 2px 4px; position: absolute; right:366px;top:32px; display: none;}
+    #mychoose{z-index: 100;width:72px;height: 114px;background: #fff;border: 1px solid #dcdcdc;padding:2px 4px 2px 4px; position: absolute; right:366px;top:32px; display: none;}
     #mychoose li{float: left;margin-bottom: 2px; width: 68px;text-align: center;}
 /*我的移动客户端*/
-    #moveclient{width: 230px;height: 170px;border:1px solid #dcdcdc;background: url(../img/yidong.png) no-repeat;position: absolute;right:190px;top:32px; display: none;}
+    #moveclient{z-index: 100;width: 230px;height: 170px;border:1px solid #dcdcdc;background: url(../img/yidong.png) no-repeat;position: absolute;right:190px;top:32px; display: none;}
     #moveclient #pic1{position: absolute;top:100px;left: 14px}
     #moveclient #pic2{position: absolute;top:100px;left: 118px}
 /*微信的二维码*/
-    #erweima{position: absolute; right:16px;top:36px;display: none; }
+    #erweima{z-index: 100;position: absolute; right:16px;top:36px;display: none; }
     #erweima1{width: 120px;height: 118px;border: 1px solid #dcdcdc;background: url(../img/weixingma.png) no-repeat;}
 /*帮助中心*/
-    #help{width:72px;height: 120px;background: #fff;border: 1px solid #dcdcdc;padding:2px 4px 2px 4px; position: absolute; right:200px;top:32px; display: none;}
+    #help{z-index: 100;width:72px;height: 120px;background: #fff;border: 1px solid #dcdcdc;padding:2px 4px 2px 4px; position: absolute; right:200px;top:32px; display: none;}
     #help li{float: left;margin-bottom: 2px; width: 68px;text-align: center;}
 /*网站导航*/
-    #webNav{width: 738px;height: 140px;border:1px solid #dcdcdc; padding: 20px;position: absolute;right:138px;top:32px;display: none;}
+    #webNav{z-index: 100;width: 738px;height: 140px;border:1px solid #dcdcdc; padding: 20px;position: absolute;right:138px;top:32px;display: none;}
     #webNav div{float: left; width: 220px;height: 130px; border-right: 1px solid #dcdcdc;margin-right: 38px}
     #webNav #sp{margin: 0px; width: 140px;border:0px;}
     #webNav div p{margin-bottom: 14px;}

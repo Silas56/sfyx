@@ -159,6 +159,11 @@
 						move();
 					}
 				}
+
+
+				$('#goto').on('click',function(){
+					location.href = "productInfo.html";
+				})
 		})
 	</script>
 </head>
@@ -290,7 +295,7 @@
 			<div id="nav">
 				<span><a href="#">精选商品分类</a></span>
 				<ul>
-					<li ><a class="nav_first" href="#">首页</a></li>
+					<li ><a class="nav_first" href="index.html">首页</a></li>
 					<li><a href="#">优选商城</a></li>
 					<li><a href="#">优选生鲜</a></li>
 					<li><a href="#">优选海淘</a></li>
@@ -428,100 +433,7 @@
 					</div>
 					<div class="tan_down"><a href="#"></a></div>
 				</div>
-				<!-- <div id="menu_tan1">
-					<div class="tan_up">
-					 	<span><a href="#">肉类熟食</a></span>
-						<ul>
-							<li><a href="#">香肠</a></li>
-							<li><a href="#">火腿</a></li>
-							<li><a href="#">培根</a></li>
-							<li><a href="#">其他熟食</a></li>
-							<li><a class="active" href="#">荷美尔</a></li>
-							<li><a class="active" href="#">月盛斋</a></li>
-						</ul>
-						<div style="clear:both"></div>
-						<span><a href="#">蛋品</a></span>
-						<ul>
-							<li><a href="#">鸡蛋</a></li>
-							<li><a href="#">松花蛋/咸鸭蛋</a></li>
-							<li><a class="active" href="#">德青源</a></li>
-							<li><a class="active" href="#">百年栗园</a></li>
-						</ul>
-						<div style="clear:both"></div>
-						<span><a href="#">冷藏奶品饮品</a></span>
-						<ul>
-							<li><a href="#">低温奶</a></li>
-							<li><a href="#">奶制品</a></li>
-							<li><a href="#">冷藏果汁</a></li>
-							<li><a href="#">奶酪</a></li>
-							<li><a href="#">黄油</a></li>
-							<li><a href="#">酸奶</a></li>
-						</ul>
-						<div style="clear:both"></div>
-						<span><a href="#">素食冰品</a></span>
-						<ul>
-							<li><a href="#">冰淇淋</a></li>
-							<li><a href="#">冷冻甜点</a></li>
-							<li><a class="active" href="#">哈根达斯</a></li>
-							<li><a class="active" href="#">Yeekewan</a></li>
-						</ul>
-						<a id="xx" href=""></a>
-					</div>
-					<div class="tan_down"><a href="#"></a></div>
-				</div>
-				<div id="menu_tan2">
-					<div class="tan_up">
-					 	<span><a href="#">水果</a></span>
-						<ul>
-							<li><a href="#">车厘子/樱桃</a></li>
-							<li><a href="#">橙子</a></li>
-							<li><a href="#">柚类</a></li>
-							<li><a href="#">柠檬</a></li>
-							<li><a href="#">橙子</a></li>
-							<li><a href="#">柚类</a></li>
-							<li><a href="#">柠檬</a></li>
-							<li><a href="#">橙子</a></li>
-							<li><a href="#">柚类</a></li>
-							<li><a href="#">柠檬</a></li>
-							<li><a href="#">橙子</a></li>
-							<li><a href="#">柚类</a></li>
-							<li><a href="#">柠檬</a></li>
-							<li><a href="#">橙子</a></li>
-							<li><a href="#">柚类</a></li>
-							<li><a href="#">柠檬</a></li>
-							<li><a href="#">橙子</a></li>
-							<li><a href="#">柚类</a></li>
-							<li><a href="#">柠檬</a></li>
-							<li><a href="#">橙子</a></li>
-							<li><a href="#">柚类</a></li>
-							<li><a href="#">柠檬</a></li>
-							<li><a href="#">橙子</a></li>
-							<li><a href="#">柚类</a></li>
-							<li><a href="#">柠檬</a></li>
-						</ul>
-						<div style="clear:both"></div>
-						<span><a href="#">蛋品</a></span>
-						<ul>
-							<li><a href="#">鸡蛋</a></li>
-							<li><a href="#">柚类</a></li>
-							<li><a href="#">柠檬</a></li>
-							<li><a href="#">橙子</a></li>
-							<li><a href="#">柚类</a></li>
-							<li><a href="#">柠檬</a></li>
-							<li><a href="#">橙子</a></li>
-							<li><a href="#">柚类</a></li>
-							<li><a href="#">柠檬</a></li>
-							<li><a href="#">橙子</a></li>
-							<li><a href="#">柚类</a></li>
-							<li><a href="#">柠檬</a></li>
-							<li><a href="#">松花蛋</a></li>
-							<li><a class="active" href="#">德青源</a></li>
-							<li><a class="active" href="#">百年栗园</a></li>
-						</ul>
-						<a id="xx" href=""></a>
-					</div>
-					<div class="tan_down"><a href="#"></a></div>
-				</div> -->
+				
 			</div>
 			<div style="clear:both"></div>
 <!-- content -->
@@ -542,7 +454,7 @@
 			</div>
 			<div class="list_up_right_down">
 				<dl>
-					<dt><img src="img/list_apple.png"></dt>
+					<dt id="goto"><img src="img/list_apple.png"></dt>
 					<dd>
 					   <p>塔斯马尼亚Tiger Fuji苹果  12粒</p>
 					   <p>"苹果岛"的骄傲</p>
