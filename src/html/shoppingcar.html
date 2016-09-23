@@ -107,6 +107,9 @@
 					$('#denlu').hide();
 				})
 			})
+			$('.continue').on('click',function(){
+				location.href = "../index.html";
+			})
 // 获取cookie的数据
 			var getData ="";
 			 getData = getCookie("go");
@@ -129,6 +132,7 @@
 				this.closest('tr').remove();
 				removeCookie('go');
 			})
+
 
 		})
 	</script>
