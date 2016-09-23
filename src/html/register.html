@@ -36,6 +36,7 @@
 	.foot{width: 978px;height: 72px;border-top: 1px solid #dcdcdc;padding-top: 12px;padding-left: 22px;background: #fff}
 	.foot a{display: inline-block;width: 83px;height: 16px;background: url(../img/re_more.png) no-repeat;}
 	
+	
 	</style>
 	<script type="text/javascript">
 		$(function(){
@@ -87,6 +88,9 @@
 				if(password.val()!=again.val()){
 					flag2=false;
 				}
+				else{
+					flag2=true;
+				}
 
 			})
 
@@ -129,6 +133,7 @@
 				}
 			})
 			
+			
 
 
 
@@ -144,7 +149,7 @@
 					<span class="geren">个人用户</span>
 					<span class="qiye">企业用户</span>
 				</p>
-				<span>已有账号&nbsp;立即<a href="#">登录</a></span>
+				<span>已有账号&nbsp;立即<a href="shoppingcar.html">登录</a></span>
 			</div>
 			<div class="content">
 				<form>
@@ -153,12 +158,13 @@
 					<p><span class="left"><img src="../img/xinxing.png">确认密码:</span><input type="password" name="again"></p>
 					<p><span class="left"><img src="../img/xinxing.png">验证码:</span><input id="splical" type="test" name="yanzhen"><span id="random">1234</span><span>看不清?</span><a id="huan" href="#">换一换</a></p>
 					<p class="m2"><input id="checkbox" type="checkbox" name="check"><span>我已经阅读并同意<a href="#">《顺丰优选用户注册协议》</a></span></p>
-					<p class="ml"><button>立即注册</button></p>
+					<p class="ml"><button id="register">立即注册</button></p>
 				</form>
 			</div>
 			<div class="foot">
 				<a href="#"></a>
 			</div>
-		</div>
+			
+	    </div>
 	</body>
 	</head>
